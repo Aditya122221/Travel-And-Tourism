@@ -13,7 +13,7 @@
         <Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:background="@color/ascentColor">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,10 +27,10 @@
                     android:layout_width="100dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
-                    app:srcCompat="@drawable/logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:srcCompat="@drawable/logo" />
 
                 <TextView
                     android:id="@+id/brandName"
@@ -41,9 +41,9 @@
                     android:text="TripMate"
                     android:textColor="@color/white"
                     android:textSize="35sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toRightOf="@+id/logo"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageButton
                     android:id="@+id/search"
@@ -63,9 +63,9 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:layout_marginRight="32dp"
-                    android:visibility="gone"
                     android:background="@android:color/transparent"
                     android:src="@drawable/baseline_close_24"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -80,16 +80,18 @@
         android:id="@+id/svOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:layout_marginTop="50dp"
-        android:fitsSystemWindows="true">
+        android:layout_marginTop="100dp"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none">
 
         <LinearLayout
             android:id="@+id/svOneLLOne"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="25dp">
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:paddingBottom="75dp">
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,16 +104,18 @@
                     android:id="@+id/clOneRlOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:visibility="gone"
-                    android:padding="10dp">
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
 
                     <!-- Search Container -->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
+                        android:layout_height="75dp"
                         android:background="@drawable/search_edit_text"
-                        android:orientation="horizontal"
                         android:gravity="center_vertical"
+                        android:orientation="horizontal"
                         android:padding="8dp">
 
                         <!-- Search Icon -->
@@ -126,25 +130,25 @@
                         <EditText
                             android:id="@+id/searchEditText"
                             android:layout_width="0dp"
+                            android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:layout_height="wrap_content"
-                            android:hint="Places to go..."
-                            android:textSize="16sp"
                             android:background="@null"
+                            android:hint="Places to go..."
                             android:paddingStart="10dp"
-                            android:paddingEnd="10dp" />
+                            android:paddingEnd="10dp"
+                            android:textSize="16sp" />
 
                         <!-- Search Button -->
                         <Button
                             android:id="@+id/searchButton"
                             android:layout_width="100dp"
-                            android:layout_height="40dp"
-                            android:text="Search"
-                            android:textColor="@color/black"
-                            android:backgroundTint="@color/ascentColor"
-                            android:layout_marginEnd="10dp"
+                            android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:gravity="center"/>
+                            android:layout_marginEnd="10dp"
+                            android:backgroundTint="@color/ascentColor"
+                            android:gravity="center"
+                            android:text="Search"
+                            android:textColor="@color/white" />
                     </LinearLayout>
                 </RelativeLayout>
 
@@ -152,8 +156,8 @@
                     android:id="@+id/svTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scrollbars="none"
                     android:layout_marginTop="50dp"
+                    android:scrollbars="none"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/clOneRlOne">
@@ -187,7 +191,7 @@
                                 android:fontFamily="@font/alfa_slab_one"
                                 android:text="Amritsar"
                                 android:textColor="@color/white"
-                                android:textSize="45sp"
+                                android:textSize="40sp"
                                 app:layout_constraintBottom_toBottomOf="@+id/CLOneImgOne"
                                 app:layout_constraintLeft_toLeftOf="@+id/CLOneImgOne" />
 
@@ -305,10 +309,66 @@
                                 app:layout_constraintLeft_toLeftOf="@+id/CLFiveImgOne" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
-
-
                 </HorizontalScrollView>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/txtOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/acme"
+                android:text="Top Experiences on TripMate"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:text="The best tours, activities and tickets"
+                android:textSize="25sp" />
+
+            <HorizontalScrollView
+                android:id="@+id/svThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/svThreeLLOne"
+                    android:layout_width="wrap_content"
+                    android:layout_height="350dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/svThreeLLOneCLLOne"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/CLLOneImg"
+                            android:layout_width="250dp"
+                            android:layout_height="250dp"
+                            app:srcCompat="@drawable/kolkata_zoo" />
+
+                        <TextView
+                            android:id="@+id/CLLOneTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Tour in Lolkata Zoo"
+                            android:textSize="25sp"/>
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
 
         </LinearLayout>
     </ScrollView>
