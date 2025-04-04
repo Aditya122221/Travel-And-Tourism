@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -23,6 +24,11 @@ class Login : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.emailEditTxt)
         val password = findViewById<EditText>(R.id.passwordEditTxt)
         val loginBtn = findViewById<Button>(R.id.loginBtn)
+        val signer = findViewById<TextView>(R.id.signer)
+
+        signer.setOnClickListener {
+            startActivity(Intent(this, SignUp::class.java))
+        }
 
 //        loginBtn.setOnClickListener {
 //            val user = UserManager.getUserByEmail("ananya@gmail.com")

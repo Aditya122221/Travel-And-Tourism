@@ -356,11 +356,19 @@
                             app:srcCompat="@drawable/kolkata_zoo" />
 
                         <TextView
-                            android:id="@+id/CLLOneTxt"
+                            android:id="@+id/CLLOneTxtOne"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Tour in Lolkata Zoo"
+                            android:text="Tour in Kolkata Zoo"
+                            android:textStyle="bold"
                             android:textSize="25sp"/>
+
+                        <TextView
+                            android:id="@+id/CLLOneTstTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Starting from ₹300 per person"
+                            android:textSize="18sp"/>
 
 
                     </LinearLayout>

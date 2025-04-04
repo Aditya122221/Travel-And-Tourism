@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -26,6 +27,11 @@ class SignUp : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.passwordEditTxt)
         val cPassword = findViewById<EditText>(R.id.cPasswordEditTxt)
         val signupBtn = findViewById<Button>(R.id.signupBtn)
+        val logger = findViewById<TextView>(R.id.logger)
+
+        logger.setOnClickListener {
+            startActivity(Intent(this, Login::class.java))
+        }
 
         signupBtn.setOnClickListener {
             val uName = name.text.toString()
