@@ -1,5 +1,6 @@
 package com.example.tripmate
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -15,6 +16,7 @@ class PlaceDetails : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_place_details)
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
